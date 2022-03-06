@@ -1,3 +1,5 @@
+//// Das linhas 1 a 100: São comentários avulsos de diversas aulas ////
+
 /* const menu = document.querySelectorAll('.menu a');
 
 
@@ -95,12 +97,11 @@ function showElement(evento) {
 }
 
 todosElementos.forEach((elemento) => elemento.addEventListener('click', showElement))
-
 */
 
-///////////////////////////////////
-/* SELEÇÃO DE ELEMENTOS PELO DOM */
-///////////////////////////////////
+//////////////////////////////////////////////////////////////////
+/* SELEÇÃO DE ELEMENTOS PELO DOM */ ///////////////////////////////
+//////////////////////////////////////////////////////////////////
 
 //const animais = document.getElementById('animais');
 //console.log(animais);
@@ -165,4 +166,55 @@ console.log(oPrimeiroH2);
 // Selecione o último p do site
 const oUltimoP = document.getElementsByTagName('p');
 console.log(oUltimoP[oUltimoP.length - 1]);
+*/
+
+//////////////////////////////////////////////////////////////////
+/////* Traversing e Manipulação */ ///////////////////////////////
+//////////////////////////////////////////////////////////////////
+
+//innerText => Traz o conteúdo de texto do item selecionado.
+//innerHTML => Traz o conteúdo HTML do item selecionado.
+//outerHTML => Traz o HTML do próprio item selecionado.
+
+//item.parentElement => Traz o elemento pai
+//item.parentElement.parentElement => Traz o elemento pai do pai
+//item.previousElementSibling => Traz o elemento anterior
+//item.nextElementSibling => Traz o próximo elemento
+
+//item.children => HTML collection com os elementos-filho
+//item.appendChild(item3); => move item3 para o final de item
+//item.insertBefore(item3, item2); => insere a item3 antes de item2
+//item.removeChild(item2); => remove item2 de item
+//item.replaceChild(item3, item2); => substitui item2 por item3
+
+// variavel.cloneNode(boolean) se for true, clona os filhos.
+
+/* Exercícios Traversing
+
+// Duplique o menu e adicione ele em copy
+
+let menu = document.querySelector('.menu');
+let copy = document.querySelector('.copy');
+
+const menuClone = menu.cloneNode(true);
+
+copy.appendChild(menuClone);
+
+// Selecione o primeir DT da dl de Faq
+
+let faq = document.querySelector('#faq');
+let primeiroDT = faq.children[1].firstElementChild;
+
+console.log(primeiroDT);
+
+// Selecione o DD referente ao primeiro DT
+
+let primeiroDD = primeiroDT.nextElementSibling;
+console.log(primeiroDD);
+
+// Substituia o conteúdo html de .faq pelo de .animais
+
+let animais = document.querySelector('.animais');
+
+faq.innerHTML = animais.innerHTML;
 */
