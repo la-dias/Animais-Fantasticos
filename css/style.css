@@ -50,7 +50,7 @@ body {
   margin-right: 10px;
   color: #222;
   text-decoration: none;
-  font-family: "IBM Plex Mono", monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 0.875rem;
@@ -69,7 +69,7 @@ body {
 }
 
 .titulo {
-  font-family: "Playfair Display", Georgia;
+  font-family: 'Playfair Display', Georgia;
   font-size: 6rem;
   line-height: 1;
   font-weight: 400;
@@ -78,7 +78,7 @@ body {
 }
 
 .animais h2::before {
-  content: "";
+  content: '';
   display: inline-block;
   width: 40px;
   height: 10px;
@@ -92,7 +92,7 @@ body {
   margin-bottom: 1rem;
 }
 .animais h2 {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -104,6 +104,9 @@ body {
   height: 370px;
   overflow-y: scroll;
   grid-column: 2;
+}
+.animais-lista li {
+  cursor: pointer;
 }
 
 .animais-lista::-webkit-scrollbar {
@@ -133,7 +136,7 @@ body {
 }
 
 .faq-lista dt {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-weight: bold;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
@@ -141,7 +144,7 @@ body {
 }
 
 .faq-lista dt::before {
-  content: "";
+  content: '';
   display: inline-block;
   width: 20px;
   height: 10px;
@@ -169,7 +172,7 @@ body {
 }
 
 .dados li::before {
-  content: "";
+  content: '';
   display: inline-block;
   width: 20px;
   height: 10px;
@@ -185,7 +188,7 @@ body {
 
 .copy p {
   padding: 20px;
-  font-family: "IBM Plex Mono", monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-weight: bold;
 }
 
@@ -222,4 +225,67 @@ body {
   .copy {
     margin-bottom: 0px;
   }
+}
+
+.jstabcontent section {
+  display: none;
+}
+
+.jstabcontent section.ativo {
+  display: block !important;
+  animation: show 0.5s forwards;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.jsAccordion dd {
+  display: none;
+}
+
+.jsAccordion dt::after {
+  content: '↴';
+  margin-left: 10px;
+}
+
+.jsAccordion dt.ativo::after {
+  content: '⬏';
+}
+
+.jsAccordion dd.ativo {
+  display: block;
+  animation: slideDown 0.8s forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+
+  to {
+    max-height: 200px;
+    opacity: 1;
+  }
+}
+
+.jsScroll {
+  opacity: 0;
+  transform: translate3d(-30px, 0, 0);
+  transition: 0.4s;
+}
+
+.jsScroll.ativo {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: 0.4s;
 }
