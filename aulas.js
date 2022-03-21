@@ -218,3 +218,100 @@ let animais = document.querySelector('.animais');
 
 faq.innerHTML = animais.innerHTML;
 */
+
+//////////////////////////////////////////////////////////////////
+/////* Constructor Function */ ///////////////////////////////////
+//////////////////////////////////////////////////////////////////
+
+// Constructor Function deve ser nomeada com PascalCase para facilitar a identificação.
+/*
+function Carro() {
+  this.marca = 'Marca';
+  this.preco = 0;
+}
+
+const honda = new Carro();
+honda.marca = 'Honda';
+honda.preco = 4000;
+const fiat = new Carro();
+fiat.marca = 'Fiat';
+fiat.preco = 3000;
+
+
+PASSOS da palavra new
+
+const honda = new Carro();
+
+   // 1 Cria um novo objeto
+honda = {};
+
+   // 2 Define o protótipo
+honda.prototype = Carro.prototype;
+
+    // 3 Aponta a variável this para o objeto
+this = honda;
+
+    // 4 Executa a função, substituindo this pelo objeto
+honda.marca = 'Marca';
+honda.preco = 0;
+
+  // 5 Retorna o novo objeto
+return honda = {
+  marca: 'Marca',
+  preco: 0,
+}
+
+*/
+// EXERCICIOS //
+
+// Transforme o objeto abaixo em uma Constructor Function
+const pessoa = {
+  nome: 'Nome pessoa',
+  idade: 0,
+  andar() {
+    console.log(this.nome + ' andou');
+  },
+};
+
+function Pessoa(nomeDado, idadeDada) {
+  this.nome = nomeDado;
+  this.idade = idadeDada;
+  this.andar = function () {
+    console.log(this.nome + ' andou');
+  };
+}
+
+const Lucas = new Pessoa('Lucas', 30);
+
+// Crie 3 pessoas, João - 20 anos,
+// Maria - 25 anos, Bruno - 15 anos
+
+const Joao = new Pessoa('Joao', 20);
+const Maria = new Pessoa('Maia', 25);
+const Bruno = new Pessoa('Bruno', 15);
+
+// Crie uma Constructor Function (Dom) para manipulação
+// de listas de elementos do dom. Deve conter as seguintes
+// propriedades e métodos:
+//
+// elements, retorna NodeList com os elementos selecionados
+// addClass(classe), adiciona a classe a todos os elementos
+// removeClass(classe), remove a classe a todos os elementos
+
+function Dom(seletor) {
+  const elementList = document.querySelectorAll(seletor);
+  this.elements = elementList;
+  this.addClass = function (classe) {
+    elementList.forEach((element) => {
+      element.classList.add(classe);
+    });
+  };
+
+  this.removeClass = function (classe) {
+    elementList.forEach((element) => {
+      element.classList.remove(classe);
+    });
+  };
+}
+
+const listaItens = new Dom('li');
